@@ -730,6 +730,7 @@ struct Error final {
   ::challenge_bypass_ristretto::TokenError code;
   ::rust::String msg;
 
+  bool ok() const noexcept;
   using IsRelocatable = ::std::true_type;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$Error

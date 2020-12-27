@@ -98,6 +98,8 @@ pub mod ffi {
         type SignedTokensResult;
         type UnblindedTokensResult;
 
+        fn ok(self: &Error) -> bool;
+
         fn encode_base64(self: &TokenPreimage) -> String;
 
         fn decode_base64_token_preimage(s: &str) -> Box<TokenPreimageResult>;
@@ -235,6 +237,10 @@ pub struct SignedTokens(Vec<voprf::SignedToken>);
 pub struct UnblindedTokens(Vec<UnblindedToken>);
 
 impl Error {
+    fn ok(self: &Error) -> bool {
+        self.code == TokenError::None
+    }
+
     fn none() -> Self {
         Error {
             code: TokenError::None,

@@ -30,7 +30,7 @@ int main() {
 
   // server decodes it
   Box<BlindedTokenResult> server_blinded_tok = decode_base64_blinded_token(base64_blinded_tok);
-  if (server_blinded_tok->error().code != TokenError::None) {
+  if (!server_blinded_tok->error().ok()) {
     std::string msg = std::string(server_blinded_tok->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;
@@ -38,7 +38,7 @@ int main() {
 
   // server signs the blinded token 
   Box<SignedTokenResult> server_signed_tok = sKey->sign(server_blinded_tok->unwrap());
-  if (server_signed_tok->error().code != TokenError::None) {
+  if (!server_signed_tok->error().ok()) {
     std::string msg = std::string(server_signed_tok->error().msg);
     cerr<<"ERROR: signing failed: "<<msg<<"\n";
     return 1;
@@ -49,7 +49,7 @@ int main() {
 
   std::vector<std::string> base64_blinded_toks = {base64_blinded_tok};
   Box<BlindedTokensResult> server_blinded_toks = decode_base64_blinded_tokens(base64_blinded_toks);
-  if (server_blinded_toks->error().code != TokenError::None) {
+  if (!server_blinded_toks->error().ok()) {
     std::string msg = std::string(server_blinded_toks->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;
@@ -57,14 +57,14 @@ int main() {
 
   std::vector<std::string> base64_signed_toks = {base64_signed_tok};
   Box<SignedTokensResult> server_signed_toks = decode_base64_signed_tokens(base64_signed_toks);
-  if (server_signed_toks->error().code != TokenError::None) {
+  if (!server_signed_toks->error().ok()) {
     std::string msg = std::string(server_signed_toks->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;
   }
 
   Box<BatchDLEQProofResult> server_batch_proof = sKey->new_batch_dleq_proof(server_blinded_toks->unwrap(), server_signed_toks->unwrap());
-  if (server_batch_proof->error().code != TokenError::None) {
+  if (!server_batch_proof->error().ok()) {
     std::string msg = std::string(server_batch_proof->error().msg);
     cerr<<"ERROR: creating batch proof failed: "<<msg<<"\n";
     return 1;
@@ -74,34 +74,34 @@ int main() {
   cout<<"[SERVER] base64_batch_proof: "<<base64_batch_proof<<"\n";
 
   Box<BatchDLEQProofResult> batch_proof = decode_base64_batch_dleq_proof(base64_batch_proof);
-  if (batch_proof->error().code != TokenError::None) {
+  if (!batch_proof->error().ok()) {
     std::string msg = std::string(batch_proof->error().msg);
     cerr<<"ERROR: deserializing batch proof failed: "<<msg<<"\n";
     return 1;
   }
 
   Box<PublicKeyResult> client_pkey = decode_base64_public_key(base64_pkey);
-  if (client_pkey->error().code != TokenError::None) {
+  if (!client_pkey->error().ok()) {
     std::string msg = std::string(client_pkey->error().msg);
     cerr<<"ERROR: deserializing public key failed: "<<msg<<"\n";
     return 1;
   }
 
-  if (batch_proof->unwrap().verify(server_blinded_toks->unwrap(), server_signed_toks->unwrap(), client_pkey->unwrap()).code != TokenError::None) {
+  if (!batch_proof->unwrap().verify(server_blinded_toks->unwrap(), server_signed_toks->unwrap(), client_pkey->unwrap()).ok()) {
     cerr<<"ERROR: verifying proof failed: "<<"\n";
     return 1;
   }
 
    std::vector<std::string> base64_toks = {base64_tok};
   Box<TokensResult> restored_toks = decode_base64_tokens(base64_toks);
-  if (restored_toks->error().code != TokenError::None) {
+  if (!restored_toks->error().ok()) {
     std::string msg = std::string(restored_toks->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;
   }
 
   Box<UnblindedTokensResult> unblinded_toks = batch_proof->unwrap().verify_and_unblind(restored_toks->unwrap(), server_blinded_toks->unwrap(), server_signed_toks->unwrap(), client_pkey->unwrap());
-  if (unblinded_toks->error().code != TokenError::None) {
+  if (!unblinded_toks->error().ok()) {
     std::string msg = std::string(unblinded_toks->error().msg);
     cerr<<"ERROR: verifying proof and unblinding failed: "<<msg<<"\n";
     return 1;
@@ -120,7 +120,7 @@ int main() {
 
   // client later restore the next unblinded token in order to redeem
   Box<UnblindedTokenResult> restored_unblinded_tok = decode_base64_unblinded_token(base64_unblinded_toks[0]);
-  if (restored_unblinded_tok->error().code != TokenError::None) {
+  if (!restored_unblinded_tok->error().ok()) {
     std::string msg = std::string(restored_unblinded_tok->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;
@@ -139,14 +139,14 @@ int main() {
 
   // server decodes the token preimage and signature
   Box<TokenPreimageResult> server_preimage = decode_base64_token_preimage(base64_token_preimage);
-  if (server_preimage->error().code != TokenError::None) {
+  if (!server_preimage->error().ok()) {
     std::string msg = std::string(server_preimage->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;
   }
 
   Box<VerificationSignatureResult> server_sig = decode_base64_verification_signature(base64_signature);
-  if (server_sig->error().code != TokenError::None) {
+  if (!server_sig->error().ok()) {
     std::string msg = std::string(server_sig->error().msg);
     cerr<<"ERROR: deserialization failed: "<<msg<<"\n";
     return 1;

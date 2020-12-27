@@ -766,6 +766,7 @@ struct Error final {
   ::challenge_bypass_ristretto::TokenError code;
   ::rust::String msg;
 
+  bool ok() const noexcept;
   using IsRelocatable = ::std::true_type;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$Error
@@ -975,6 +976,8 @@ struct UnblindedTokensResult final : public ::rust::Opaque {
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokensResult
 
 extern "C" {
+bool challenge_bypass_ristretto$cxxbridge1$Error$ok(const ::challenge_bypass_ristretto::Error &self) noexcept;
+
 void challenge_bypass_ristretto$cxxbridge1$TokenPreimage$encode_base64(const ::challenge_bypass_ristretto::TokenPreimage &self, ::rust::String *return$) noexcept;
 
 ::challenge_bypass_ristretto::TokenPreimageResult *challenge_bypass_ristretto$cxxbridge1$decode_base64_token_preimage(::rust::repr::PtrLen s) noexcept;
@@ -1099,6 +1102,10 @@ const ::challenge_bypass_ristretto::UnblindedTokens *challenge_bypass_ristretto$
 
 const ::rust::Vec<::challenge_bypass_ristretto::UnblindedToken> *challenge_bypass_ristretto$cxxbridge1$UnblindedTokens$as_vec(const ::challenge_bypass_ristretto::UnblindedTokens &self) noexcept;
 } // extern "C"
+
+bool Error::ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$Error$ok(*this);
+}
 
 ::rust::String TokenPreimage::encode_base64() const noexcept {
   ::rust::MaybeUninit<::rust::String> return$;
