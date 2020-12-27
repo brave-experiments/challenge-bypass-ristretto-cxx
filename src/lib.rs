@@ -25,8 +25,8 @@ macro_rules! impl_result {
                 }
             }
 
-            fn ok(self: &$r) -> bool {
-                self.error().ok()
+            fn is_ok(self: &$r) -> bool {
+                self.error().is_ok()
             }
 
             fn unwrap(self: &$r) -> &$t {
@@ -102,13 +102,13 @@ pub mod ffi {
         type SignedTokensResult;
         type UnblindedTokensResult;
 
-        fn ok(self: &Error) -> bool;
+        fn is_ok(self: &Error) -> bool;
 
         fn encode_base64(self: &TokenPreimage) -> String;
 
         fn decode_base64_token_preimage(s: &str) -> Box<TokenPreimageResult>;
         fn error(self: &TokenPreimageResult) -> &Error;
-        fn ok(self: &TokenPreimageResult) -> bool;
+        fn is_ok(self: &TokenPreimageResult) -> bool;
         fn unwrap(self: &TokenPreimageResult) -> &TokenPreimage;
 
         fn generate_token() -> Box<Token>;
@@ -117,21 +117,21 @@ pub mod ffi {
 
         fn decode_base64_token(s: &str) -> Box<TokenResult>;
         fn error(self: &TokenResult) -> &Error;
-        fn ok(self: &TokenResult) -> bool;
+        fn is_ok(self: &TokenResult) -> bool;
         fn unwrap(self: &TokenResult) -> &Token;
 
         fn encode_base64(self: &BlindedToken) -> String;
 
         fn decode_base64_blinded_token(s: &str) -> Box<BlindedTokenResult>;
         fn error(self: &BlindedTokenResult) -> &Error;
-        fn ok(self: &BlindedTokenResult) -> bool;
+        fn is_ok(self: &BlindedTokenResult) -> bool;
         fn unwrap(self: &BlindedTokenResult) -> &BlindedToken;
 
         fn encode_base64(self: &SignedToken) -> String;
 
         fn decode_base64_signed_token(s: &str) -> Box<SignedTokenResult>;
         fn error(self: &SignedTokenResult) -> &Error;
-        fn ok(self: &SignedTokenResult) -> bool;
+        fn is_ok(self: &SignedTokenResult) -> bool;
         fn unwrap(self: &SignedTokenResult) -> &SignedToken;
 
         fn encode_base64(self: &UnblindedToken) -> String;
@@ -140,7 +140,7 @@ pub mod ffi {
 
         fn decode_base64_unblinded_token(s: &str) -> Box<UnblindedTokenResult>;
         fn error(self: &UnblindedTokenResult) -> &Error;
-        fn ok(self: &UnblindedTokenResult) -> bool;
+        fn is_ok(self: &UnblindedTokenResult) -> bool;
         fn unwrap(self: &UnblindedTokenResult) -> &UnblindedToken;
 
         fn generate_signing_key() -> Box<SigningKey>;
@@ -151,14 +151,14 @@ pub mod ffi {
 
         fn decode_base64_signing_key(s: &str) -> Box<SigningKeyResult>;
         fn error(self: &SigningKeyResult) -> &Error;
-        fn ok(self: &SigningKeyResult) -> bool;
+        fn is_ok(self: &SigningKeyResult) -> bool;
         fn unwrap(self: &SigningKeyResult) -> &SigningKey;
 
         fn encode_base64(self: &PublicKey) -> String;
 
         fn decode_base64_public_key(s: &str) -> Box<PublicKeyResult>;
         fn error(self: &PublicKeyResult) -> &Error;
-        fn ok(self: &PublicKeyResult) -> bool;
+        fn is_ok(self: &PublicKeyResult) -> bool;
         fn unwrap(self: &PublicKeyResult) -> &PublicKey;
 
         fn sign(self: &VerificationKey, msg: &CxxString) -> Box<VerificationSignature>;
@@ -168,7 +168,7 @@ pub mod ffi {
 
         fn decode_base64_verification_signature(s: &str) -> Box<VerificationSignatureResult>;
         fn error(self: &VerificationSignatureResult) -> &Error;
-        fn ok(self: &VerificationSignatureResult) -> bool;
+        fn is_ok(self: &VerificationSignatureResult) -> bool;
         fn unwrap(self: &VerificationSignatureResult) -> &VerificationSignature;
 
         fn new_batch_dleq_proof(
@@ -194,27 +194,27 @@ pub mod ffi {
 
         fn decode_base64_batch_dleq_proof(s: &str) -> Box<BatchDLEQProofResult>;
         fn error(self: &BatchDLEQProofResult) -> &Error;
-        fn ok(self: &BatchDLEQProofResult) -> bool;
+        fn is_ok(self: &BatchDLEQProofResult) -> bool;
         fn unwrap(self: &BatchDLEQProofResult) -> &BatchDLEQProof;
 
         fn decode_base64_tokens(s: &CxxVector<CxxString>) -> Box<TokensResult>;
         fn error(self: &TokensResult) -> &Error;
-        fn ok(self: &TokensResult) -> bool;
+        fn is_ok(self: &TokensResult) -> bool;
         fn unwrap(self: &TokensResult) -> &Tokens;
 
         fn decode_base64_blinded_tokens(s: &CxxVector<CxxString>) -> Box<BlindedTokensResult>;
         fn error(self: &BlindedTokensResult) -> &Error;
-        fn ok(self: &BlindedTokensResult) -> bool;
+        fn is_ok(self: &BlindedTokensResult) -> bool;
         fn unwrap(self: &BlindedTokensResult) -> &BlindedTokens;
 
         fn decode_base64_signed_tokens(s: &CxxVector<CxxString>) -> Box<SignedTokensResult>;
         fn error(self: &SignedTokensResult) -> &Error;
-        fn ok(self: &SignedTokensResult) -> bool;
+        fn is_ok(self: &SignedTokensResult) -> bool;
         fn unwrap(self: &SignedTokensResult) -> &SignedTokens;
 
         fn decode_base64_unblinded_tokens(s: &CxxVector<CxxString>) -> Box<UnblindedTokensResult>;
         fn error(self: &UnblindedTokensResult) -> &Error;
-        fn ok(self: &UnblindedTokensResult) -> bool;
+        fn is_ok(self: &UnblindedTokensResult) -> bool;
         fn unwrap(self: &UnblindedTokensResult) -> &UnblindedTokens;
 
         fn as_vec(self: &UnblindedTokens) -> &Vec<UnblindedToken>;
@@ -254,7 +254,7 @@ pub struct SignedTokens(Vec<voprf::SignedToken>);
 pub struct UnblindedTokens(Vec<UnblindedToken>);
 
 impl Error {
-    fn ok(self: &Error) -> bool {
+    fn is_ok(self: &Error) -> bool {
         self.code == TokenError::None
     }
 

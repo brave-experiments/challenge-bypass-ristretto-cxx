@@ -766,7 +766,7 @@ struct Error final {
   ::challenge_bypass_ristretto::TokenError code;
   ::rust::String msg;
 
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   using IsRelocatable = ::std::true_type;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$Error
@@ -875,7 +875,7 @@ struct UnblindedTokens final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenPreimageResult
 struct TokenPreimageResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::TokenPreimage &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenPreimageResult
@@ -884,7 +884,7 @@ struct TokenPreimageResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenResult
 struct TokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::Token &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenResult
@@ -893,7 +893,7 @@ struct TokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokenResult
 struct BlindedTokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::BlindedToken &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokenResult
@@ -902,7 +902,7 @@ struct BlindedTokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokenResult
 struct SignedTokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::SignedToken &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokenResult
@@ -911,7 +911,7 @@ struct SignedTokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokenResult
 struct UnblindedTokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::UnblindedToken &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokenResult
@@ -920,7 +920,7 @@ struct UnblindedTokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SigningKeyResult
 struct SigningKeyResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::SigningKey &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SigningKeyResult
@@ -929,7 +929,7 @@ struct SigningKeyResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$PublicKeyResult
 struct PublicKeyResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::PublicKey &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$PublicKeyResult
@@ -938,7 +938,7 @@ struct PublicKeyResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$VerificationSignatureResult
 struct VerificationSignatureResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::VerificationSignature &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$VerificationSignatureResult
@@ -947,7 +947,7 @@ struct VerificationSignatureResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BatchDLEQProofResult
 struct BatchDLEQProofResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::BatchDLEQProof &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BatchDLEQProofResult
@@ -956,7 +956,7 @@ struct BatchDLEQProofResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokensResult
 struct TokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::Tokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokensResult
@@ -965,7 +965,7 @@ struct TokensResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokensResult
 struct BlindedTokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::BlindedTokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokensResult
@@ -974,7 +974,7 @@ struct BlindedTokensResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokensResult
 struct SignedTokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::SignedTokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokensResult
@@ -983,13 +983,13 @@ struct SignedTokensResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokensResult
 struct UnblindedTokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::UnblindedTokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokensResult
 
 extern "C" {
-bool challenge_bypass_ristretto$cxxbridge1$Error$ok(const ::challenge_bypass_ristretto::Error &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$Error$is_ok(const ::challenge_bypass_ristretto::Error &self) noexcept;
 
 void challenge_bypass_ristretto$cxxbridge1$TokenPreimage$encode_base64(const ::challenge_bypass_ristretto::TokenPreimage &self, ::rust::String *return$) noexcept;
 
@@ -997,7 +997,7 @@ void challenge_bypass_ristretto$cxxbridge1$TokenPreimage$encode_base64(const ::c
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$error(const ::challenge_bypass_ristretto::TokenPreimageResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$ok(const ::challenge_bypass_ristretto::TokenPreimageResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$is_ok(const ::challenge_bypass_ristretto::TokenPreimageResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::TokenPreimage *challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$unwrap(const ::challenge_bypass_ristretto::TokenPreimageResult &self) noexcept;
 
@@ -1011,7 +1011,7 @@ void challenge_bypass_ristretto$cxxbridge1$Token$encode_base64(const ::challenge
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$TokenResult$error(const ::challenge_bypass_ristretto::TokenResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$TokenResult$ok(const ::challenge_bypass_ristretto::TokenResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$TokenResult$is_ok(const ::challenge_bypass_ristretto::TokenResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::Token *challenge_bypass_ristretto$cxxbridge1$TokenResult$unwrap(const ::challenge_bypass_ristretto::TokenResult &self) noexcept;
 
@@ -1021,7 +1021,7 @@ void challenge_bypass_ristretto$cxxbridge1$BlindedToken$encode_base64(const ::ch
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$error(const ::challenge_bypass_ristretto::BlindedTokenResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$ok(const ::challenge_bypass_ristretto::BlindedTokenResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$is_ok(const ::challenge_bypass_ristretto::BlindedTokenResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::BlindedToken *challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$unwrap(const ::challenge_bypass_ristretto::BlindedTokenResult &self) noexcept;
 
@@ -1031,7 +1031,7 @@ void challenge_bypass_ristretto$cxxbridge1$SignedToken$encode_base64(const ::cha
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$error(const ::challenge_bypass_ristretto::SignedTokenResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$ok(const ::challenge_bypass_ristretto::SignedTokenResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$is_ok(const ::challenge_bypass_ristretto::SignedTokenResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::SignedToken *challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$unwrap(const ::challenge_bypass_ristretto::SignedTokenResult &self) noexcept;
 
@@ -1045,7 +1045,7 @@ const ::challenge_bypass_ristretto::TokenPreimage *challenge_bypass_ristretto$cx
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$error(const ::challenge_bypass_ristretto::UnblindedTokenResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$ok(const ::challenge_bypass_ristretto::UnblindedTokenResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$is_ok(const ::challenge_bypass_ristretto::UnblindedTokenResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::UnblindedToken *challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$unwrap(const ::challenge_bypass_ristretto::UnblindedTokenResult &self) noexcept;
 
@@ -1063,7 +1063,7 @@ void challenge_bypass_ristretto$cxxbridge1$SigningKey$encode_base64(const ::chal
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$error(const ::challenge_bypass_ristretto::SigningKeyResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$ok(const ::challenge_bypass_ristretto::SigningKeyResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$is_ok(const ::challenge_bypass_ristretto::SigningKeyResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::SigningKey *challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$unwrap(const ::challenge_bypass_ristretto::SigningKeyResult &self) noexcept;
 
@@ -1073,7 +1073,7 @@ void challenge_bypass_ristretto$cxxbridge1$PublicKey$encode_base64(const ::chall
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$error(const ::challenge_bypass_ristretto::PublicKeyResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$ok(const ::challenge_bypass_ristretto::PublicKeyResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$is_ok(const ::challenge_bypass_ristretto::PublicKeyResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::PublicKey *challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$unwrap(const ::challenge_bypass_ristretto::PublicKeyResult &self) noexcept;
 
@@ -1087,7 +1087,7 @@ void challenge_bypass_ristretto$cxxbridge1$VerificationSignature$encode_base64(c
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$error(const ::challenge_bypass_ristretto::VerificationSignatureResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$ok(const ::challenge_bypass_ristretto::VerificationSignatureResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$is_ok(const ::challenge_bypass_ristretto::VerificationSignatureResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::VerificationSignature *challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$unwrap(const ::challenge_bypass_ristretto::VerificationSignatureResult &self) noexcept;
 
@@ -1103,7 +1103,7 @@ void challenge_bypass_ristretto$cxxbridge1$BatchDLEQProof$verify(const ::challen
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$error(const ::challenge_bypass_ristretto::BatchDLEQProofResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$ok(const ::challenge_bypass_ristretto::BatchDLEQProofResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$is_ok(const ::challenge_bypass_ristretto::BatchDLEQProofResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::BatchDLEQProof *challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$unwrap(const ::challenge_bypass_ristretto::BatchDLEQProofResult &self) noexcept;
 
@@ -1111,7 +1111,7 @@ const ::challenge_bypass_ristretto::BatchDLEQProof *challenge_bypass_ristretto$c
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$TokensResult$error(const ::challenge_bypass_ristretto::TokensResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$TokensResult$ok(const ::challenge_bypass_ristretto::TokensResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$TokensResult$is_ok(const ::challenge_bypass_ristretto::TokensResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::Tokens *challenge_bypass_ristretto$cxxbridge1$TokensResult$unwrap(const ::challenge_bypass_ristretto::TokensResult &self) noexcept;
 
@@ -1119,7 +1119,7 @@ const ::challenge_bypass_ristretto::Tokens *challenge_bypass_ristretto$cxxbridge
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$error(const ::challenge_bypass_ristretto::BlindedTokensResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$ok(const ::challenge_bypass_ristretto::BlindedTokensResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$is_ok(const ::challenge_bypass_ristretto::BlindedTokensResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::BlindedTokens *challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$unwrap(const ::challenge_bypass_ristretto::BlindedTokensResult &self) noexcept;
 
@@ -1127,7 +1127,7 @@ const ::challenge_bypass_ristretto::BlindedTokens *challenge_bypass_ristretto$cx
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$error(const ::challenge_bypass_ristretto::SignedTokensResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$ok(const ::challenge_bypass_ristretto::SignedTokensResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$is_ok(const ::challenge_bypass_ristretto::SignedTokensResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::SignedTokens *challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$unwrap(const ::challenge_bypass_ristretto::SignedTokensResult &self) noexcept;
 
@@ -1135,15 +1135,15 @@ const ::challenge_bypass_ristretto::SignedTokens *challenge_bypass_ristretto$cxx
 
 const ::challenge_bypass_ristretto::Error *challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$error(const ::challenge_bypass_ristretto::UnblindedTokensResult &self) noexcept;
 
-bool challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$ok(const ::challenge_bypass_ristretto::UnblindedTokensResult &self) noexcept;
+bool challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$is_ok(const ::challenge_bypass_ristretto::UnblindedTokensResult &self) noexcept;
 
 const ::challenge_bypass_ristretto::UnblindedTokens *challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$unwrap(const ::challenge_bypass_ristretto::UnblindedTokensResult &self) noexcept;
 
 const ::rust::Vec<::challenge_bypass_ristretto::UnblindedToken> *challenge_bypass_ristretto$cxxbridge1$UnblindedTokens$as_vec(const ::challenge_bypass_ristretto::UnblindedTokens &self) noexcept;
 } // extern "C"
 
-bool Error::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$Error$ok(*this);
+bool Error::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$Error$is_ok(*this);
 }
 
 ::rust::String TokenPreimage::encode_base64() const noexcept {
@@ -1160,8 +1160,8 @@ const ::challenge_bypass_ristretto::Error &TokenPreimageResult::error() const no
   return *challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$error(*this);
 }
 
-bool TokenPreimageResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$ok(*this);
+bool TokenPreimageResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$TokenPreimageResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::TokenPreimage &TokenPreimageResult::unwrap() const noexcept {
@@ -1190,8 +1190,8 @@ const ::challenge_bypass_ristretto::Error &TokenResult::error() const noexcept {
   return *challenge_bypass_ristretto$cxxbridge1$TokenResult$error(*this);
 }
 
-bool TokenResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$TokenResult$ok(*this);
+bool TokenResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$TokenResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::Token &TokenResult::unwrap() const noexcept {
@@ -1212,8 +1212,8 @@ const ::challenge_bypass_ristretto::Error &BlindedTokenResult::error() const noe
   return *challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$error(*this);
 }
 
-bool BlindedTokenResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$ok(*this);
+bool BlindedTokenResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$BlindedTokenResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::BlindedToken &BlindedTokenResult::unwrap() const noexcept {
@@ -1234,8 +1234,8 @@ const ::challenge_bypass_ristretto::Error &SignedTokenResult::error() const noex
   return *challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$error(*this);
 }
 
-bool SignedTokenResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$ok(*this);
+bool SignedTokenResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$SignedTokenResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::SignedToken &SignedTokenResult::unwrap() const noexcept {
@@ -1264,8 +1264,8 @@ const ::challenge_bypass_ristretto::Error &UnblindedTokenResult::error() const n
   return *challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$error(*this);
 }
 
-bool UnblindedTokenResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$ok(*this);
+bool UnblindedTokenResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$UnblindedTokenResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::UnblindedToken &UnblindedTokenResult::unwrap() const noexcept {
@@ -1302,8 +1302,8 @@ const ::challenge_bypass_ristretto::Error &SigningKeyResult::error() const noexc
   return *challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$error(*this);
 }
 
-bool SigningKeyResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$ok(*this);
+bool SigningKeyResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$SigningKeyResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::SigningKey &SigningKeyResult::unwrap() const noexcept {
@@ -1324,8 +1324,8 @@ const ::challenge_bypass_ristretto::Error &PublicKeyResult::error() const noexce
   return *challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$error(*this);
 }
 
-bool PublicKeyResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$ok(*this);
+bool PublicKeyResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$PublicKeyResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::PublicKey &PublicKeyResult::unwrap() const noexcept {
@@ -1354,8 +1354,8 @@ const ::challenge_bypass_ristretto::Error &VerificationSignatureResult::error() 
   return *challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$error(*this);
 }
 
-bool VerificationSignatureResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$ok(*this);
+bool VerificationSignatureResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$VerificationSignatureResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::VerificationSignature &VerificationSignatureResult::unwrap() const noexcept {
@@ -1390,8 +1390,8 @@ const ::challenge_bypass_ristretto::Error &BatchDLEQProofResult::error() const n
   return *challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$error(*this);
 }
 
-bool BatchDLEQProofResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$ok(*this);
+bool BatchDLEQProofResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$BatchDLEQProofResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::BatchDLEQProof &BatchDLEQProofResult::unwrap() const noexcept {
@@ -1406,8 +1406,8 @@ const ::challenge_bypass_ristretto::Error &TokensResult::error() const noexcept 
   return *challenge_bypass_ristretto$cxxbridge1$TokensResult$error(*this);
 }
 
-bool TokensResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$TokensResult$ok(*this);
+bool TokensResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$TokensResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::Tokens &TokensResult::unwrap() const noexcept {
@@ -1422,8 +1422,8 @@ const ::challenge_bypass_ristretto::Error &BlindedTokensResult::error() const no
   return *challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$error(*this);
 }
 
-bool BlindedTokensResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$ok(*this);
+bool BlindedTokensResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$BlindedTokensResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::BlindedTokens &BlindedTokensResult::unwrap() const noexcept {
@@ -1438,8 +1438,8 @@ const ::challenge_bypass_ristretto::Error &SignedTokensResult::error() const noe
   return *challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$error(*this);
 }
 
-bool SignedTokensResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$ok(*this);
+bool SignedTokensResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$SignedTokensResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::SignedTokens &SignedTokensResult::unwrap() const noexcept {
@@ -1454,8 +1454,8 @@ const ::challenge_bypass_ristretto::Error &UnblindedTokensResult::error() const 
   return *challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$error(*this);
 }
 
-bool UnblindedTokensResult::ok() const noexcept {
-  return challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$ok(*this);
+bool UnblindedTokensResult::is_ok() const noexcept {
+  return challenge_bypass_ristretto$cxxbridge1$UnblindedTokensResult$is_ok(*this);
 }
 
 const ::challenge_bypass_ristretto::UnblindedTokens &UnblindedTokensResult::unwrap() const noexcept {

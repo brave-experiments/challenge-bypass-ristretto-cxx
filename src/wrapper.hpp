@@ -730,7 +730,7 @@ struct Error final {
   ::challenge_bypass_ristretto::TokenError code;
   ::rust::String msg;
 
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   using IsRelocatable = ::std::true_type;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$Error
@@ -839,7 +839,7 @@ struct UnblindedTokens final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenPreimageResult
 struct TokenPreimageResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::TokenPreimage &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenPreimageResult
@@ -848,7 +848,7 @@ struct TokenPreimageResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenResult
 struct TokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::Token &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokenResult
@@ -857,7 +857,7 @@ struct TokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokenResult
 struct BlindedTokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::BlindedToken &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokenResult
@@ -866,7 +866,7 @@ struct BlindedTokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokenResult
 struct SignedTokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::SignedToken &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokenResult
@@ -875,7 +875,7 @@ struct SignedTokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokenResult
 struct UnblindedTokenResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::UnblindedToken &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokenResult
@@ -884,7 +884,7 @@ struct UnblindedTokenResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SigningKeyResult
 struct SigningKeyResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::SigningKey &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SigningKeyResult
@@ -893,7 +893,7 @@ struct SigningKeyResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$PublicKeyResult
 struct PublicKeyResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::PublicKey &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$PublicKeyResult
@@ -902,7 +902,7 @@ struct PublicKeyResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$VerificationSignatureResult
 struct VerificationSignatureResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::VerificationSignature &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$VerificationSignatureResult
@@ -911,7 +911,7 @@ struct VerificationSignatureResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BatchDLEQProofResult
 struct BatchDLEQProofResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::BatchDLEQProof &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BatchDLEQProofResult
@@ -920,7 +920,7 @@ struct BatchDLEQProofResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokensResult
 struct TokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::Tokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$TokensResult
@@ -929,7 +929,7 @@ struct TokensResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokensResult
 struct BlindedTokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::BlindedTokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$BlindedTokensResult
@@ -938,7 +938,7 @@ struct BlindedTokensResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokensResult
 struct SignedTokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::SignedTokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$SignedTokensResult
@@ -947,7 +947,7 @@ struct SignedTokensResult final : public ::rust::Opaque {
 #define CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokensResult
 struct UnblindedTokensResult final : public ::rust::Opaque {
   const ::challenge_bypass_ristretto::Error &error() const noexcept;
-  bool ok() const noexcept;
+  bool is_ok() const noexcept;
   const ::challenge_bypass_ristretto::UnblindedTokens &unwrap() const noexcept;
 };
 #endif // CXXBRIDGE1_STRUCT_challenge_bypass_ristretto$UnblindedTokensResult
