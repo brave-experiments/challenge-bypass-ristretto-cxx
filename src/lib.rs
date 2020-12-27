@@ -21,7 +21,7 @@ macro_rules! impl_result {
             fn error(self: &$r) -> &Error {
                 match &self.0 {
                     Err(e) => &e,
-                    _ => &NO_ERROR,
+                    Ok(_) => &NO_ERROR,
                 }
             }
 
